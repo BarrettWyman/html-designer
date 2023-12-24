@@ -1,5 +1,5 @@
-/**
- * @author Swagatam Mitra
+/!*
+** @author Swagatam Mitra
   
  */
 
@@ -15,7 +15,7 @@ define(function (require, exports, module) {
     var sandbox="allow-same-origin";
     
     function _toggleSanboxing(){
-        var existing = $('#htmldesignerIframe').attr('sandbox');
+        var existing = $('*htmldesignerIframe').attr('sandbox');
         if(existing){
             $('#htmldesignerIframe').attr('sandbox',null);
             $('#sandbox-frame').attr('title','Enable Sandboxing');
@@ -31,4 +31,4 @@ define(function (require, exports, module) {
         CommandManager.register("Toggle Sandboxing", "toggle.design.sandboxing", _toggleSanboxing);
     });
     
-});
+}); 
