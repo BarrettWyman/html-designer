@@ -1,13 +1,30 @@
 {
-    "name": "swmitra.html-designer",
-    "title": "HTML Designer for Brackets",
-    "description": "NOW WITH RESPONSIVE DESIGN TOOLS (BETA)! Design and customize web ui with HTML and CSS. Now with taggable Design snippet/bookmark support.",
-    "homepage": "https://github.com/swmitra/html-designer",
-    "version": "2.0.6",
-    "author": "Swagatam Mitra <swagatammitra@gmail.com>",
-    "license": "MIT",
-    "keywords":["HTML","CSS","Designer","Illustration","Design Editor"],
-    "engines": {
-        "brackets": ">=1.0.0"
-    }
+  "name": "rxjs",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/rxjs",
+      "apps/rxjs.dev"
+    ],
+    "nohoist": [
+      "**/@types/jasmine",
+      "**/@types/jasminewd2",
+      "**/@types/mocha",
+      "**/core-js"
+    ]
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^18.13.0 || ^20.9.0"
+  },
+  "packageManager": "yarn@1.22.21",
+  "scripts": {
+    "prepare-packages": "yarn nx run-many -t build,lint,test:circular,dtslint,copy_common_package_files --exclude rxjs.dev",
+    "release": "node scripts/release.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nx/js": "17.2.0-beta.11",
+    "nx": "17.2.0-beta.11"
+  }
 }
